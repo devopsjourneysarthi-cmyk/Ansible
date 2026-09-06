@@ -1,0 +1,7 @@
+---
+- name: Test Ansible connectivity
+  hosts: webserver
+
+  tasks:
+    - name: ping from conrolnode
+      ansible.builtin.ping:

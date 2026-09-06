@@ -1,0 +1,20 @@
+---
+- name: Install set of tools 
+  hosts: all
+  become: true 
+
+  tasks:
+  - name: upadte apt cache 
+    ansible.builtin.apt:
+      update_cache: true
+    
+  - name: Install Required tools 
+    ansible.builtin.apt:
+     name:  "{{ item }}"
+     state: present
+    
+    loop: 
+      - tree 
+      - wget
+
+
