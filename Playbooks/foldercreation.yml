@@ -1,0 +1,12 @@
+---
+- name: create Application Folder 
+  hosts: all
+  become: true
+
+  tasks:
+   - name:   application folder 
+     ansible.builtin.file:
+      path: /opt/devop/application
+      state: directory 
+      mode: '0777'
+

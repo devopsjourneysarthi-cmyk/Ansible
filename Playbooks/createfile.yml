@@ -1,0 +1,12 @@
+---
+- name: Create file via playbook
+  hosts: all 
+  become: true 
+
+  tasks: 
+   - name: This will create file 
+     ansible.builtin.file:
+       path: /home/ubuntu/error1.log
+       state: touch 
+       mode: '777'
+
